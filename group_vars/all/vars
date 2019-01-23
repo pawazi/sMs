@@ -1,0 +1,8 @@
+---
+remote_user: 'remote_user'
+localusr: 'localusr'
+localgrp: 'staff'
+thumbApps:
+ - '/Applications/iBooks.app'
+lan: 'en'
+

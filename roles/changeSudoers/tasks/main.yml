@@ -1,0 +1,10 @@
+---
+# This script sends bash script to a remote host
+
+- name: changeSudoers
+  become: yes
+  template:
+    src: templates/sudoers.usr
+    dest: /etc/sudoers.d/{{ localusr }}
+    mode: 0440
+

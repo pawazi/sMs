@@ -1,0 +1,14 @@
+---
+- name: change_sudoers
+  hosts: remote
+  remote_user: "{{ remote_user }}"
+
+  roles:
+    - changeSudoers
+
+- name: push_mac_service
+  hosts: remote
+  remote_user: "{{ remote_user }}"
+
+  roles:
+    - uploadMacService

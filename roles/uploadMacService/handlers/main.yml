@@ -1,0 +1,5 @@
+---
+  #run the script and show message on stdout
+- name: print_handler
+  changed_when: True
+  debug: msg="service succesfully copied..."

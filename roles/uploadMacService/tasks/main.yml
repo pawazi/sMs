@@ -1,0 +1,25 @@
+---
+# Upload service to /Users/{username}/Library/Services
+
+- name: uploadMacService
+  copy:
+    src: templates/sMs.workflow
+    dest: /Users/{{ localusr }}/Library/Services/
+    mode: 0755
+    owner: "{{ localusr }}"
+    group: "{{ localgrp }}"
+  become: yes
+  become_method: sudo
+
+  notify:
+          - print_handler
+
+- name: uploadMacScriptTemplate
+  template:
+          src: templates/sMs.workflow/Contents/document.wflow
+          dest: /Users/{{ localusr }}/Library/Services/sMs.workflow/Contents/document.wflow
+          mode: 0755
+          owner: "{{ localusr }}"
+          group: "{{ localgrp }}"
+  become: yes
+  become_method: sudo
